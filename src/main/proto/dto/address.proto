@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package user;
+
+option java_generate_equals_and_hash = true;
+option java_multiple_files = true;
+option java_package = "address";
+option java_outer_classname = "AddressProto";
+
+
+message Address {
+  string street = 1;
+  string house = 2;
+  Region region = 3;
+  District district = 4;
+}
+
+message Region {
+  int32 id = 1;
+  string name = 2;
+  int32 code = 3;
+  int32 isoCode = 4;
+  repeated District districts = 5;
+}
+
+message District {
+  int32 id = 1;
+  string name = 2;
+  int32 code = 3;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package user;
+
+import "address.proto";
+option java_generate_equals_and_hash = true;
+option java_multiple_files = true;
+option java_package = "users";
+option java_outer_classname = "UserProto";
+
+
+message User {
+  int32 id = 1;
+  string name = 2;
+  string lastname = 3;
+  Address address = 4;
+}
