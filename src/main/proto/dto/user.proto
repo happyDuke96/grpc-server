@@ -1,17 +1,34 @@
 syntax = "proto3";
 
-package user;
-
-import "address.proto";
+package test;
+import "dto/address.proto";
 option java_generate_equals_and_hash = true;
 option java_multiple_files = true;
-option java_package = "users";
 option java_outer_classname = "UserProto";
 
-
-message User {
+message UserData {
   int32 id = 1;
   string name = 2;
   string lastname = 3;
+  int32 age = 4;
+  Address address = 5;
+}
+
+message CreateUserRequest {
+  string name = 1;
+  string lastname = 2;
+  int32 age = 3;
   Address address = 4;
+}
+
+message CreateUserResponse {
+  UserData user = 1;
+}
+
+message GetUserByIdRequest{
+  int32 id = 1;
+}
+
+message GetUserByIdResponse {
+  UserData user = 1;
 }

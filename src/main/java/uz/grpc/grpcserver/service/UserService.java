@@ -1,4 +1,4 @@
-package uz.grpc.grpcserver;
+package uz.grpc.grpcserver.service;
 
 public interface UserService {
 }
