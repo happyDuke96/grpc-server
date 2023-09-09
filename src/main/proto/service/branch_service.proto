@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package branch;
+import "dto/branch.proto";
+option java_multiple_files = true;
+option java_outer_classname = "BranchGrpc";
+
+service BranchService{
+  rpc createBranch(CreatePizzaBranchRequest) returns (CreatePizzaBranchResponse);
+  rpc getBranchById(GetPizzaBranchByIdRequest) returns (GetPizzaBranchByIdResponse);
+}

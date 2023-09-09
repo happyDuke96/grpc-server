@@ -2,8 +2,9 @@ package uz.grpc.grpcserver.repository;
 
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
-import uz.grpc.grpcserver.domain.Region;
+import uz.grpc.grpcserver.domain.Branch;
 
 @Repository
-public interface RegionRepository extends ReactiveMongoRepository<Region,String> {
+public interface BranchRepository extends ReactiveMongoRepository<Branch,String> {
+
 }

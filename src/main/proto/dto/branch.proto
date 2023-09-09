@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package branch;
+import "dto/region.proto";
+option java_multiple_files = true;
+option java_outer_classname = "PizzaBranchProto";
+
+message PizzaBranchData {
+  string id = 1;
+  string street = 2;
+  string house = 3;
+  string apartment = 4;
+  string latitude = 5;
+  string longitude = 6;
+  RegionGrpc region = 7;
+}
+
+message CreatePizzaBranchRequest {
+  string street = 1;
+  string house = 2;
+  string apartment = 3;
+  string latitude = 4;
+  string longitude = 5;
+  RegionGrpc region = 6;
+}
+
+message CreatePizzaBranchResponse {
+  PizzaBranchData branch = 1;
+}
+
+message GetPizzaBranchByIdRequest{
+  string id = 1;
+}
+
+message GetPizzaBranchByIdResponse {
+  PizzaBranchData branch = 1;
+}

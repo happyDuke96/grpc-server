@@ -1,8 +1,11 @@
 package uz.grpc.grpcserver.dto;
 
+import lombok.Builder;
+
+@Builder
 public record RegionDTO(
-        Integer id,
+        String id,
         String name,
-        Integer code,
-        Integer isoCode) {
+        String isoCode
+) {
 }

@@ -7,23 +7,32 @@ import lombok.experimental.FieldDefaults;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.DocumentReference;
 import org.springframework.data.mongodb.core.mapping.Field;
+
 import java.io.Serializable;
 
 @Data
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Document(collection = "region")
-public class Region implements Serializable {
+@Document(collection = "branch")
+public class Branch implements Serializable {
 
     @Id
-    @Field("region_id")
     @Indexed(unique = true)
-    String regionId;
+    String id;
 
-    @Field("name")
-    String name;
+    String street;
 
-    @Field("iso_code")
-    String isoCode;
+    String house;
+
+    String apartment;
+
+    String latitude;
+
+    String longitude;
+
+    @Field("region")
+    @DocumentReference(lookup = "{ 'region_id' : ?#{#target} }")
+    Region region;
 }

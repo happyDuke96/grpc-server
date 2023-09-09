@@ -3,27 +3,16 @@ server:
 grpc:
   server:
     port: 3000
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/pizza_branch
+      database: pizza_branch
+  mvc:
+    problemdetails:
+      enabled: true
 
 faker:
-  enabled: true
+  enabled: false
   locale: ru
-  count: 12
+  count: 1024
